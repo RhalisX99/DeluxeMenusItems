@@ -1,0 +1,6 @@
+name: DeluxeMenusItems
+version: ${project.version}
+main: it.rhalis.deluxemenusitems.DeluxeMenusItems
+depend: [DeluxeMenus]
+authors: [RhalisX99]
+description: Open your DeluxeMenus' menus with an item in your hand
