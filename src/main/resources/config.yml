@@ -1,0 +1,30 @@
+Items:
+  #Item identifier
+  example-item:
+    material: COMPASS
+    #Item display name
+    #NOTE: if removed, all items with the same material will open this menu
+    name: '&eExample menu'
+    #DeluxeMenus' menu name
+    menu: example
+    #Actions which will allows to open the menu
+    actions:
+      - LEFT_CLICK_AIR
+      - LEFT_CLICK_BLOCK
+      - RIGHT_CLICK_AIR
+      - RIGHT_CLICK_BLOCK
+  lobbies-item:
+    material: STAINED_GLASS_PANE
+    #Item material data
+    data: 10
+    name: '&eLobby menu'
+    menu: lobby
+    actions:
+      - LEFT_CLICK_AIR
+      - LEFT_CLICK_BLOCK
+      - RIGHT_CLICK_AIR
+      - RIGHT_CLICK_BLOCK
+
+Messages:
+  no-permission: '&cYou don''t have permission to execute this command.'
+  menu-not-found: '&cThere was an error during the menu open process. Contact a staff member to solve this problem.'

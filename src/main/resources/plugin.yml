@@ -1,5 +1,5 @@
 name: DeluxeMenusItems
-version: ${project.version}
+version: 1.2
 main: it.rhalis.deluxemenusitems.DeluxeMenusItems
 depend: [DeluxeMenus]
 authors: [RhalisX99]
