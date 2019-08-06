@@ -2,7 +2,6 @@ package it.rhalis.deluxemenusitems.item;
 
 import it.rhalis.deluxemenusitems.DeluxeMenusItems;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import org.bukkit.ChatColor;
@@ -52,7 +51,7 @@ public class ItemManager {
 
     }
 
-    private void addItem(final String identifier, final ItemStack item, final String menu, final List<Action> actions) {
+    private void addItem(String identifier, ItemStack item, String menu, List<Action> actions) {
         this.items.add(new MenuItem() {
             public String getIdentifier() {
                 return identifier;

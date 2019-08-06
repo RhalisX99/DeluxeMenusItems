@@ -13,23 +13,22 @@ public class DMIListener implements Listener {
 
     private DeluxeMenusItems plugin;
 
-    public DMIListener(final DeluxeMenusItems p) {
+    public DMIListener(DeluxeMenusItems p) {
         this.plugin = p;
-        p.getServer().getPluginManager().registerEvents(this, this.plugin);
+        p.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
     @EventHandler
-    public void onInteract(final PlayerInteractEvent e) {
+    public void onInteract(PlayerInteractEvent e) {
         Player p = e.getPlayer();
         MenuItem mi;
-        if ((mi = this.plugin.getItemManager().getMenuItem(p.getItemInHand())) != null) {
+        if ((mi = plugin.getItemManager().getMenuItem(p.getItemInHand())) != null) {
             e.setCancelled(true);
-            final Menu m = Menu.getMenu(mi.getMenu());
+            Menu m = Menu.getMenu(mi.getMenu());
             if (m != null) {
-                m.openMenu(p, p, null);
-            }
-            else {
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&', this.plugin.getConfig().getString("Messages.menu-not-found")));
+                if(mi.getActions().contains(e.getAction())) m.openMenu(p, p, null);
+            } else {
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("Messages.menu-not-found")));
             }
         }
     }

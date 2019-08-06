@@ -9,6 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class DMICommand implements CommandExecutor {
+
     private DeluxeMenusItems plugin;
 
     public DMICommand(DeluxeMenusItems p, String command) {
@@ -19,7 +20,6 @@ public class DMICommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender.hasPermission("dmi.admin")) {
             if (args.length > 0) {
-
                 switch (args[0].toLowerCase()) {
                     case "reload":
                         if (args.length == 1) {
@@ -28,9 +28,7 @@ public class DMICommand implements CommandExecutor {
                             plugin.getItemManager().update();
                             long b = System.currentTimeMillis() - a;
                             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aConfiguration reloaded successfully in " + b + "ms."));
-                        } else {
-                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cCorrect usage: &7/" + label + " reload"));
-                        }
+                        } else sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cCorrect usage: &7/" + label + " reload"));
                         break;
                     case "item":
                         if (sender instanceof Player) {
